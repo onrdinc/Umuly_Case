@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbCaseModelStoreContainer" CdmEntityContainer="DbCaseEntities">
+    <EntitySetMapping Name="Teklif">
+      <EntityTypeMapping TypeName="DbCaseModel.Teklif">
+        <MappingFragment StoreEntitySet="Teklif">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Modu" ColumnName="Modu" />
+          <ScalarProperty Name="Hareket_Sekli" ColumnName="Hareket_Sekli" />
+          <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+          <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Urun_Sayisi" ColumnName="Urun_Sayisi" />
+          <ScalarProperty Name="Paket_Tipi" ColumnName="Paket_Tipi" />
+          <ScalarProperty Name="Uzunluk" ColumnName="Uzunluk" />
+          <ScalarProperty Name="Uzunluk_Birimi" ColumnName="Uzunluk_Birimi" />
+          <ScalarProperty Name="Agirlik" ColumnName="Agirlik" />
+          <ScalarProperty Name="Agirlik_Birimi" ColumnName="Agirlik_Birimi" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+          <ScalarProperty Name="Para_Birimi" ColumnName="Para_Birimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_teklif" FunctionName="DbCaseModel.Store.sp_teklif">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbCaseModel.sp_teklif_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Firma" ColumnName="Firma" />
+          <ScalarProperty Name="Modu" ColumnName="Modu" />
+          <ScalarProperty Name="Hareket_Sekli" ColumnName="Hareket_Sekli" />
+          <ScalarProperty Name="Incoterm" ColumnName="Incoterm" />
+          <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Urun_Sayisi" ColumnName="Urun_Sayisi" />
+          <ScalarProperty Name="Paket_Tipi" ColumnName="Paket_Tipi" />
+          <ScalarProperty Name="Uzunluk" ColumnName="Uzunluk" />
+          <ScalarProperty Name="Uzunluk_Birimi" ColumnName="Uzunluk_Birimi" />
+          <ScalarProperty Name="Agirlik" ColumnName="Agirlik" />
+          <ScalarProperty Name="Agirlik_Birimi" ColumnName="Agirlik_Birimi" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+          <ScalarProperty Name="Para_Birimi" ColumnName="Para_Birimi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,235 @@
+﻿@model Umuly_Case.Teklif
+
+@{
+    ViewBag.Title = "Teklif Oluştur";
+}
+
+<h2>Teklif Oluştur</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+     
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group">
+		@Html.LabelFor(model => model.Firma, "FİRMA ADI :", htmlAttributes: new { @class = "control-label col-md-2" })
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.Firma, new { htmlAttributes = new { @class = "form-control" } })
+		    @Html.ValidationMessageFor(model => model.Firma, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Modu, "MODU :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Modu, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="LCL",
+					Value="LCL", },
+					new SelectListItem{
+					Text="FCL",Value="FCL", },
+					new SelectListItem{
+					 Text="AİR",
+					Value="AİR", },})
+					<!--@Html.EditorFor(model => model.Modu, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Modu, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Hareket_Sekli, "HAREKET ŞEKLİ :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Hareket_Sekli,new List<SelectListItem>{
+					new SelectListItem{
+					 Text="KAPIDAN KAPIYA",
+					Value="KAPIDAN KAPIYA", },
+					new SelectListItem{
+					Text="LİMANDAN KAPIYA",Value="LİMANDAN KAPIYA", },
+					new SelectListItem{
+					 Text="KAPIDAN LİMANA",
+					Value="KAPIDAN LİMANA", },
+					new SelectListItem{
+					 Text="LİMANDAN LİMANA",
+					Value="LİMANDAN LİMANA", },})
+					<!--@Html.EditorFor(model => model.Hareket_Sekli, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Hareket_Sekli, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Incoterm, "INCOTERM :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Incoterm, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="GÜRMRÜK VERGİSİ ÖDENMİŞ",
+					Value="GÜRMRÜK VERGİSİ ÖDENMİŞ", },
+					new SelectListItem{
+					Text="YERİNDE TESLİM",Value="YERİNDE TESLİM", },
+					})
+					<!--@Html.EditorFor(model => model.Incoterm, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Incoterm, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Ulke, "ÜLKE :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Ulke, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="ABD",
+					Value="ABD", },
+					new SelectListItem{
+					Text="ÇİN",Value="ÇİN", },
+					new SelectListItem{
+					 Text="TÜRKİYE",
+					Value="TÜRKİTE", },})
+					<!--@Html.EditorFor(model => model.Ulke, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Ulke, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Sehir, "ŞEHİR :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Sehir, new List<SelectListItem>{
+	
+					new SelectListItem{
+					 Text="New York",
+					Value="New York", },
+					new SelectListItem{
+					Text="Los Angeles",Value="Los Angeles", },
+					new SelectListItem{
+					 Text="Minnesota",Value="Minnesota", },
+					new SelectListItem{
+					 Text="Pekin",
+					Value="Pekin", },
+					new SelectListItem{
+					Text="Şanghay",Value="Şanghay", },
+					new SelectListItem{
+					 Text="İstanbul",
+					Value="İstanbul", },
+					new SelectListItem{
+					 Text="İzmir",
+					Value="İzmir", }, })
+					
+
+					<!--@Html.EditorFor(model => model.Sehir, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Sehir, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Urun_Sayisi, "ÜRÜN SAYISI :",htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Urun_Sayisi, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Urun_Sayisi, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Paket_Tipi,"PAKET TİPİ :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Paket_Tipi, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="PALET",
+					Value="PALET", },
+					new SelectListItem{
+					Text="KUTU",Value="KUTU", },
+					new SelectListItem{
+					 Text="KARTON",
+					Value="KARTON", },})
+					<!--@Html.EditorFor(model => model.Paket_Tipi, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Paket_Tipi, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Uzunluk,"UZUNLUK :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Uzunluk, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Uzunluk, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Uzunluk_Birimi,"UZUNLUK BİRİMİ :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Uzunluk_Birimi, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="CM",
+					Value="CM", },
+					new SelectListItem{
+					Text="IN",Value="IN", }
+					,})
+					<!--@Html.EditorFor(model => model.Uzunluk_Birimi, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Uzunluk_Birimi, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Agirlik,"AĞIRLIK :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Agirlik, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Agirlik, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Agirlik_Birimi,"AĞIRLIK BİRİMİ :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Agirlik_Birimi, new List<SelectListItem>{
+					new SelectListItem{
+					 Text="KG",
+					Value="KG", },
+					new SelectListItem{
+					Text="LB",Value="LB", }
+					,})
+					<!--@Html.EditorFor(model => model.Agirlik_Birimi, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Agirlik_Birimi, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Ucret,"ÜCRET :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Ucret, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Ucret, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Para_Birimi,"PARA BİRİMİ :", htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.DropDownListFor(model => model.Para_Birimi, new List<SelectListItem> { 
+					new SelectListItem{
+					 Text="USD",
+					Value="USD", },
+					new SelectListItem{
+					Text="CNY",Value="CNY", },
+					new SelectListItem{
+					 Text="TL",
+					Value="TL", },})
+					<!--@Html.EditorFor(model => model.Para_Birimi, new { htmlAttributes = new { @class = "form-control" } })-->
+					<!--@Html.ValidationMessageFor(model => model.Para_Birimi, "", new { @class = "text-danger" })-->
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Oluştur" class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	}
+
+	<div>
+		@Html.ActionLink("Listeye Geri DÖn", "Index")
+	</div>
+
+	@section Scripts {
+		@Scripts.Render("~/bundles/jqueryval")
+	}

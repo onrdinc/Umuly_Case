@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Teklif">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Modu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Hareket_Sekli" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Incoterm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ulke" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Sehir" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Urun_Sayisi" Type="Int32" />
+    <Property Name="Paket_Tipi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Uzunluk" Type="Int32" />
+    <Property Name="Uzunluk_Birimi" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Agirlik" Type="Int32" />
+    <Property Name="Agirlik_Birimi" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Ucret" Type="Int32" />
+    <Property Name="Para_Birimi" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DbCaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Teklif" EntityType="Self.Teklif" />
+    <FunctionImport Name="sp_teklif" ReturnType="Collection(DbCaseModel.sp_teklif_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Firma" Mode="In" Type="String" />
+      <Parameter Name="Modu" Mode="In" Type="String" />
+      <Parameter Name="Hareket_Sekli" Mode="In" Type="String" />
+      <Parameter Name="Incoterm" Mode="In" Type="String" />
+      <Parameter Name="Ulke" Mode="In" Type="String" />
+      <Parameter Name="Sehir" Mode="In" Type="String" />
+      <Parameter Name="Urun_Sayisi" Mode="In" Type="Int32" />
+      <Parameter Name="Paket_Tipi" Mode="In" Type="String" />
+      <Parameter Name="Uzunluk" Mode="In" Type="Int32" />
+      <Parameter Name="Uzunluk_Birimi" Mode="In" Type="String" />
+      <Parameter Name="Agirlik" Mode="In" Type="Int32" />
+      <Parameter Name="Agirlik_Birimi" Mode="In" Type="String" />
+      <Parameter Name="Ucret" Mode="In" Type="Int32" />
+      <Parameter Name="Para_Birimi" Mode="In" Type="String" />
+      <Parameter Name="Secenek" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_teklif_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Firma" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Modu" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Hareket_Sekli" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Incoterm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Ulke" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Sehir" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Urun_Sayisi" Nullable="true" />
+    <Property Type="String" Name="Paket_Tipi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Uzunluk" Nullable="true" />
+    <Property Type="String" Name="Uzunluk_Birimi" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="Agirlik" Nullable="true" />
+    <Property Type="String" Name="Agirlik_Birimi" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="Ucret" Nullable="true" />
+    <Property Type="String" Name="Para_Birimi" Nullable="true" MaxLength="5" />
+  </ComplexType>
+</Schema>

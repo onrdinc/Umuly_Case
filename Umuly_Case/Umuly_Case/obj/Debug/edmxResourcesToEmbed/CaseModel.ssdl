@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Teklif">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firma" Type="varchar" MaxLength="50" />
+    <Property Name="Modu" Type="varchar" MaxLength="10" />
+    <Property Name="Hareket_Sekli" Type="varchar" MaxLength="50" />
+    <Property Name="Incoterm" Type="varchar" MaxLength="50" />
+    <Property Name="Ulke" Type="varchar" MaxLength="30" />
+    <Property Name="Sehir" Type="varchar" MaxLength="30" />
+    <Property Name="Urun_Sayisi" Type="int" />
+    <Property Name="Paket_Tipi" Type="varchar" MaxLength="50" />
+    <Property Name="Uzunluk" Type="int" />
+    <Property Name="Uzunluk_Birimi" Type="varchar" MaxLength="5" />
+    <Property Name="Agirlik" Type="int" />
+    <Property Name="Agirlik_Birimi" Type="varchar" MaxLength="5" />
+    <Property Name="Ucret" Type="int" />
+    <Property Name="Para_Birimi" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <Function Name="sp_teklif" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Firma" Type="varchar" Mode="In" />
+    <Parameter Name="Modu" Type="varchar" Mode="In" />
+    <Parameter Name="Hareket_Sekli" Type="varchar" Mode="In" />
+    <Parameter Name="Incoterm" Type="varchar" Mode="In" />
+    <Parameter Name="Ulke" Type="varchar" Mode="In" />
+    <Parameter Name="Sehir" Type="varchar" Mode="In" />
+    <Parameter Name="Urun_Sayisi" Type="int" Mode="In" />
+    <Parameter Name="Paket_Tipi" Type="varchar" Mode="In" />
+    <Parameter Name="Uzunluk" Type="int" Mode="In" />
+    <Parameter Name="Uzunluk_Birimi" Type="varchar" Mode="In" />
+    <Parameter Name="Agirlik" Type="int" Mode="In" />
+    <Parameter Name="Agirlik_Birimi" Type="varchar" Mode="In" />
+    <Parameter Name="Ucret" Type="int" Mode="In" />
+    <Parameter Name="Para_Birimi" Type="varchar" Mode="In" />
+    <Parameter Name="Secenek" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DbCaseModelStoreContainer">
+    <EntitySet Name="Teklif" EntityType="Self.Teklif" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

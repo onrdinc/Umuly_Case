@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Umuly_Case.Teklif>
+
+@{
+    ViewBag.Title = "Teklif";
+}
+
+<h3>Teklif Listesi</h3>
+
+<p>
+    @Html.ActionLink("Yeni Teklif Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           FİRMA ADI
+        </th>
+        <th>
+            MODU
+        </th>
+        <th>
+            HAREKET ŞEKLİ
+        </th>
+        <th>
+            INCOTERM
+        </th>
+        <th>
+            ÜLKE
+        </th>
+        <th>
+            ŞEHİR
+        </th>
+        <th>
+            ÜRÜN SAYISI
+        </th>
+        <th>
+            PAKET TİPİ
+        </th>
+        <th>
+           UZUNLUK
+        </th>
+        <th>
+            BİRİMİ
+        </th>
+        <th>
+            AĞIRLIK
+        </th>
+        <th>
+            BİRİMİ
+        </th>
+        <th>
+            ÜCRET
+        </th>
+        <th>
+            BİRİMİ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hareket_Sekli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Incoterm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulke)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sehir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Urun_Sayisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paket_Tipi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzunluk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzunluk_Birimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agirlik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agirlik_Birimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ucret)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Para_Birimi)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Ayrıntılar", "Details", new { id=item.ID }) 
+            
+        </td>
+    </tr>
+}
+
+</table>
